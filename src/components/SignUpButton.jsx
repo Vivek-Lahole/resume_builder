@@ -74,13 +74,14 @@ const SignUpButton = ({ src, label, authProvider }) => {
         break;
 
       default:
+        console.log("default case triggered");
         try {
-          await signInWithRedirect(auth, googleAuthProvider);
+          await signInWithRedirect(auth, githubAuthProvider);
           try {
             getRedirectResult(auth)
               .then((result) => {
                 const credential =
-                  GoogleAuthProvider.credentialFromResult(result);
+                  GithubAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
               })
@@ -92,7 +93,7 @@ const SignUpButton = ({ src, label, authProvider }) => {
                 const email = error.customData.email;
                 // The AuthCredential type that was used.
                 const credential =
-                  GoogleAuthProvider.credentialFromError(error);
+                  GithubAuthProvider.credentialFromError(error);
               });
           } catch (error) {
             // Handle errors during sign-in

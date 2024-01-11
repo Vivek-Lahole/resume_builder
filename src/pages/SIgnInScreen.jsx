@@ -48,7 +48,7 @@ const SignInScreen = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        console.log(user.displayName);
         queryClient.setQueryData("user", user);
         setState(0);
         navigate("/home");

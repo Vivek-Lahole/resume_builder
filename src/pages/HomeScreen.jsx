@@ -1,9 +1,11 @@
 import React from "react";
-import Layout from "../container/Layout";
-import { auth } from "../firebase.config";
 
 const HomeScreen = () => {
-  return <div>HomeScreen</div>;
+  return (
+    <div className="w-full flex flex-col justify-center items-center">
+      Hello
+    </div>
+  );
 };
 
 export default HomeScreen;

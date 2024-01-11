@@ -9,34 +9,18 @@ import { useRef } from "react";
 import SignUpScreen from "./pages/SignUpScreen";
 import Layout from "./container/Layout";
 import TempScreen from "./pages/TempScreen";
+import CreateTemplate from "./pages/CreateTemplate";
 
 function App() {
   const queryClient = new QueryClient();
-  const toastId = useRef(null);
-
-  const notify = () => {
-    if (!toast.isActive(toastId.current)) {
-      toastId.current = toast.success("User Succesfully Created!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
-  };
 
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
         <Layout>
           <Routes>
-            <Route path={"/"} element={<SignInScreen />} />
-            <Route path={"/home"} element={<HomeScreen />} />
-            <Route path={"/temp"} element={<TempScreen />} />
+            <Route path={"/*"} element={<HomeScreen />} />
+            <Route path={"/template/create"} element={<CreateTemplate />} />
             <Route path={"/signin"} element={<SignInScreen />} />
             <Route path={"/signup"} element={<SignUpScreen />} />
           </Routes>

@@ -5,6 +5,7 @@ import Spinner from "./Spinner";
 import { AnimatePresence, motion } from "framer-motion";
 import ProfileCard from "./ProfileCard";
 import { ToastContainer } from "react-toastify";
+import HeaderLogo from "../assets/logo.svg";
 import { CiLogin } from "react-icons/ci";
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
 
   return (
     <nav className="w-full h-16 flex justify-center items-center gap-2 sticky top-0 bg-white py-3 shadow-lg">
-      <img className="w-12 h-auto mx-4" src="src\assets\logo.svg" />
+      <img className="w-12 h-auto mx-4" src={HeaderLogo} />
       <span className="text-xl flex-1 justify-center items-center font-bold">
         Build Resume
       </span>

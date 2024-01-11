@@ -1,7 +1,7 @@
 import React from "react";
 
-const TempScreen = () => {
-  return <div>TempScreen</div>;
+const TempScreen = ({ label }) => {
+  return <div>{label}</div>;
 };
 
 export default TempScreen;

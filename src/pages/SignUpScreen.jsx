@@ -47,7 +47,7 @@ const SignUpScreen = () => {
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        console.log(user);
+        console.log(user[0]);
         setState(0);
         navigate("/home");
         // ...
